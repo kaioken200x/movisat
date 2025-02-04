@@ -1,66 +1,158 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Prueba PHP
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## XAMPP 
+- PHP 8.3
+- PUERTA 80
 
-## About Laravel
+## Categorías
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Formulario de productos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Editar productos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Validación al eliminar un producto
 
-## Learning Laravel
+# Prueba de Laravel 
+- PHP 8.3
+- Composer 2.8.5
+- Laravel versión 11 
+- `php artisan serve`
+- Puerta 8000
+- MySQL 8
+- Configuración `.env` MySQL
+    - `DB_CONNECTION=mysql`
+    - `DB_HOST=127.0.0.1`
+    - `DB_PORT=3306`
+    - `DB_DATABASE=movisat_app`
+    - `DB_USERNAME=root`
+    - `DB_PASSWORD=123@mudar`
+- `docker-compose.yml`
+- Ruta home
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Rutas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Register
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Login
 
-## Laravel Sponsors
+### Con prefijo
+- `http://localhost:8000/movisat/dashboard`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Usuario
 
-### Premium Partners
+### Editar usuario
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Roles
 
-## Contributing
+### Permisos
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Editar permisos
 
-## Code of Conduct
+### Asignar permisos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Pantallas y Funcionalidades
 
-## Security Vulnerabilities
+### 1. Pantalla de Bienvenida
+- **URL:** `/`
+- **Descripción:** Página inicial del sistema que muestra un mensaje de bienvenida.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Panel de Control
+- **URL:** `/movisat/dashboard`
+- **Descripción:** Página principal después del inicio de sesión, donde el usuario puede ver un resumen de actividades o información importante.
 
-## License
+### 3. Perfil del Usuario
+- **URLs:**
+    - Editar Perfil: `/movisat/profile`
+    - Actualizar Perfil: `/movisat/profile` (PATCH)
+    - Eliminar Perfil: `/movisat/profile` (DELETE)
+- **Descripción:** Permite al usuario editar, actualizar y eliminar su perfil.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Gestión de Usuarios
+- **URLs:**
+    - Listar Usuarios: `/movisat/users`
+    - Crear Usuario: `/movisat/users/create`
+    - Guardar Nuevo Usuario: `/movisat/users` (POST)
+    - Editar Usuario: `/movisat/users/{user}/edit`
+    - Actualizar Usuario: `/movisat/users/{user}` (PUT)
+    - Eliminar Usuario: `/movisat/users/{user}` (DELETE)
+    - Asignar Roles a Usuario: `/movisat/users/{user}/assign_roles`
+    - Guardar Roles Asignados: `/movisat/users/{user}/assign_roles` (POST)
+- **Descripción:** Permite listar, crear, editar, actualizar, eliminar usuarios y asignar roles a ellos.
+
+### 5. Gestión de Roles
+- **URLs:**
+    - Listar Roles: `/movisat/roles`
+    - Crear Rol: `/movisat/roles/create`
+    - Guardar Nuevo Rol: `/movisat/roles` (POST)
+    - Editar Rol: `/movisat/roles/{role}/edit`
+    - Actualizar Rol: `/movisat/roles/{role}` (PUT)
+    - Eliminar Rol: `/movisat/roles/{role}` (DELETE)
+    - Asignar Permisos a Rol: `/movisat/roles/{role}/assign_permissions`
+    - Guardar Permisos Asignados: `/movisat/roles/{role}/assign_permissions` (POST)
+- **Descripción:** Permite listar, crear, editar, actualizar, eliminar roles y asignar permisos a ellos.
+
+### 6. Gestión de Permisos
+- **URLs:**
+    - Listar Permisos: `/movisat/permiso`
+    - Crear Permiso: `/movisat/permiso/create`
+    - Guardar Nuevo Permiso: `/movisat/permiso` (POST)
+    - Editar Permiso: `/movisat/permiso/{permiso}/edit`
+    - Actualizar Permiso: `/movisat/permiso/{permiso}` (PUT)
+    - Eliminar Permiso: `/movisat/permiso/{permiso}` (DELETE)
+- **Descripción:** Permite listar, crear, editar, actualizar y eliminar permisos.
+
+## Pantallas de Registro
+
+### 1. Pantalla de Registro de Usuarios
+- **URL:** `/movisat/users/create`
+- **Descripción:** Formulario para crear un nuevo usuario.
+- **Campos:**
+    - Nombre
+    - Correo Electrónico
+    - Contraseña
+    - Confirmación de Contraseña
+
+### 2. Pantalla de Edición de Usuarios
+- **URL:** `/movisat/users/{user}/edit`
+- **Descripción:** Formulario para editar un usuario existente.
+- **Campos:**
+    - Nombre
+    - Correo Electrónico
+    - Contraseña (opcional)
+    - Confirmación de Contraseña (opcional)
+
+### 3. Pantalla de Asignación de Roles a Usuarios
+- **URL:** `/movisat/users/{user}/assign_roles`
+- **Descripción:** Formulario para asignar roles a un usuario.
+- **Campos:**
+    - Lista de Roles (selección múltiple)
+
+### 4. Pantalla de Registro de Roles
+- **URL:** `/movisat/roles/create`
+- **Descripción:** Formulario para crear un nuevo rol.
+- **Campos:**
+    - Nombre
+
+### 5. Pantalla de Edición de Roles
+- **URL:** `/movisat/roles/{role}/edit`
+- **Descripción:** Formulario para editar un rol existente.
+- **Campos:**
+    - Nombre
+
+### 6. Pantalla de Asignación de Permisos a Roles
+- **URL:** `/movisat/roles/{role}/assign_permissions`
+- **Descripción:** Formulario para asignar permisos a un rol.
+- **Campos:**
+    - Lista de Permisos (selección múltiple)
+
+### 7. Pantalla de Registro de Permisos
+- **URL:** `/movisat/permiso/create`
+- **Descripción:** Formulario para crear un nuevo permiso.
+- **Campos:**
+    - Nombre
+
+### 8. Pantalla de Edición de Permisos
+- **URL:** `/movisat/permiso/{permiso}/edit`
+- **Descripción:** Formulario para editar un permiso existente.
+- **Campos:**
+    - Nombre
